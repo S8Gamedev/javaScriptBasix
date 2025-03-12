@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let coffee=500;
+        let bagle=300;
+        let soup=900;
+        let  cost=1*coffee+2*bagle+1*soup;
+        costindollars=cost/100;
+        console.log(`Cost of food: $${cost}`);
+        let taxindollars=cost*0.1;
+        let taxinCents=Math.round(taxindollars)*100;
+        console.log(`Tax (10%):$${taxindollars}`);
+        let totalCost=cost+taxinCents;
+        console.log('Total cost: $'+totalCost/100);
+
+    </script>
+</body>
+</html>
