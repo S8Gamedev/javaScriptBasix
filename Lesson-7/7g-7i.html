@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function convertLength(length,from,to){
+        if(from === 'miles'){
+            if(to==='ft'){
+               return length*5280;
+            }
+            else if(to==='km'){
+               return length*1.6;
+            }
+            else if(to==='miles'){
+                return length;
+            }
+            else{
+                return `Invalid unit:${to}`
+            }
+        }
+        else if(from ==='km'){
+            if(to==='ft'){
+                return length*3281;
+            }
+            else if(to==='miles'){
+                return length/1.6;
+            }
+            else if(to==='km'){
+                return length;
+            }
+            else{
+                return `Invalid unit:${to}`
+            }
+        }
+        else{
+            return `Invalid unit:${from}`
+        }
+    }
+    </script>
+</body>
+</html>

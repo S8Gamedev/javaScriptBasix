@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="console.log(quantity)">
+        show quantity
+    </button>
+    <button onclick="if(quantity>=10){
+        alert('cart has reached the max capacity == 10');
+    }
+    else {
+    quantity++;
+    } console.log(quantity);
+    ">
+        +1
+    </button>
+    <button onclick="if(quantity!==0)quantity--;
+    else alert('Not enough items in cart');
+    console.log(quantity);">
+        -1
+    </button>
+    <script>
+        let quantity=0;
+
+    </script>
+</body>
+</html>
