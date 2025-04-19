@@ -1,0 +1,43 @@
+There are two types of objects in javascript
+
+
+1. JSON object 
+
+2. Javascript object 
+
+
+1. JSON object : are similar to javascript object but differ in syntax and do not store functions 
+
+
+syntax for json object is :
+
+{
+    "name":"value",
+    "price":intger,
+    "daysleft":8,
+    "rating":{
+        "stars":4,
+        "count":69
+    },
+}
+
+2. Javascript object : these can store functions as even functions are type of value in javascript and the functions stored in object are known as methods
+
+these can not be stored in json object's 
+
+
+the  json object is used to transfer data between systems which do not use the same programming language.
+
+
+const product1= {
+    name:"value",
+    price:intger,
+    daysleft:8,
+    "rating":{
+        "stars":4,
+        "count":69
+    },
+    greet: function(){
+        
+    }
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isSameProduct(product1,product2){
+            return product1.name === product2.name && product1.price ===product2.price;
+        }
+        const product1 = {
+            name:'pen',
+            price:500
+        };
+        const product2={
+            name:'pen',
+            price:500
+        };
+        console.log(isSameProduct(product1,product2));
+    </script>    
+</body>
+</html>
