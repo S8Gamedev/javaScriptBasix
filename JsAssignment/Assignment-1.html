@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button onclick="console.log(formatCurrency(100000000.06,'USD'));">
+    100000000.06 USD
+</button>
+<button onclick="console.log(formatCurrency(100000000.06,'INR'));">
+    100000000.06 INR
+</button>
+<button onclick="console.log(formatCurrency(100000000.06,'EUR'));">
+    100000000.06 EUR
+</button>
+<button onclick="console.log(formatCurrency(100000000,'JPY'));">
+    100000000 YEN
+</button>
+
+<body>
+    <script>
+        function formatCurrency(amount,currencyCode){
+          switch(currencyCode) {
+            case 'USD':
+                return '$'+separotor(',',3,'.',amount);
+            case 'EUR':
+                return '€'+separotor('.',3,',',amount);
+            case 'JPY':
+                return '¥'+separotor(',',3,'.',amount);
+            case 'INR':
+                return '₹'+separotor(',',2,'.',amount);
+            default:
+                return amount;
+          }  
+        }
+        function separotor(thousandsSeparator, thousandsCount, decimalSeparator, num) {
+            let decimalPart = num.toString().split('.')[1] || '';
+            let integerPart = num.toString().split('.')[0];
+
+            if (decimalPart.length > 2) {
+                decimalPart = decimalPart.slice(0, 2);
+            }
+
+            let formattedInteger = '';
+            let dec=0;
+            let count = 0;
+            if(thousandsCount ===2){
+                dec=3;
+            }
+            else dec=1;
+            for (let i = integerPart.length - dec; i >= 0; i--) {
+                formattedInteger = integerPart[i] + formattedInteger;
+                count++;
+                if (count === thousandsCount && i !== 0) {
+                    formattedInteger = thousandsSeparator + formattedInteger;
+                    count = 0;
+                }
+            }
+            if(dec===3){
+                formattedInteger = formattedInteger+thousandsSeparator+integerPart.slice(-3);
+            }
+
+            return formattedInteger + (decimalPart ? decimalSeparator + decimalPart : '');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- 2.	Strings:
+○	Question: Write a function findLongestPalindrome(str) that takes a string str as input and returns the longest palindromic substring within it. A palindrome is a string that reads the same forwards and backward (e.g., "racecar", "madam"). This will require you to efficiently check for palindromes within the string. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findLongestPalindrome(str) {
+            let longestPalindrome = '';
+            // let startIDX = 0;
+            // let endIDX = 0;
+            let p = 0;
+
+            for (let i = 0; i < str.length; i++) {
+                p = expandAroundCenter(str, i, i);
+                if (p > longestPalindrome.length) {
+                    longestPalindrome = str.substring(i - Math.floor(p / 2), i + Math.ceil(p / 2));
+                }
+
+                p = expandAroundCenter(str, i, i + 1);
+                if (p > longestPalindrome.length) {
+                    longestPalindrome = str.substring(i - Math.floor(p / 2) + 1, i + Math.ceil(p / 2));
+                }
+            }
+
+            return longestPalindrome;
+        }
+
+        function expandAroundCenter(str, left, right) {
+            while (left >= 0 && right < str.length && str[left] === str[right]) {
+                left--;
+                right++;
+            }
+            return right - left - 1;
+        }
+
+        console.log(findLongestPalindrome("babad"));
+    </script>
+</body>
+</html>
