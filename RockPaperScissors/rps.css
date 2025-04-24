@@ -1,0 +1,31 @@
+body{
+    background-color: #191919 ;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;;
+}
+
+
+.move-button{
+    background-color: transparent;
+    border: 3px solid white;
+    cursor:pointer;
+    border-radius: 100px;
+    width: 150px;
+    height:150px;
+}
+
+.reset{
+    /* color:white; */
+    background-color: white;
+    border:none;
+    border-radius: 2px;
+    padding: 5px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.emoji{
+    width: 65px;
+
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="rps.css">
+    
+
+</head>
+<body>
+    <p class="title">
+        Rock Paper Scissors
+    </p>
+    <button onclick="
+        computerMove = ComputerMove();
+        result = compareMove('rock', computerMove);
+        updateScore(result);
+        displayResult(result);
+        displayScore();
+        displayChoice('rock',computerMove);
+    " class="move-button">
+        <img src="Images/rock-emoji.png" alt="" class="emoji">
+    </button>
+    <button onclick="
+        computerMove = ComputerMove();
+        result = compareMove('paper', computerMove);
+        updateScore(result);
+        displayResult(result);
+        displayScore();
+        displayChoice('paper',computerMove);
+    " class="move-button">
+        <img src="Images/paper-emoji.png" alt="" class="emoji">
+    </button>
+    <button onclick="
+        computerMove = ComputerMove();
+        result = compareMove('scissors', computerMove);
+        updateScore(result);
+        displayResult(result);
+        displayScore();
+        displayChoice('scissors',computerMove)
+    " class="move-button">
+        <img src="Images/scissors-emoji.png" alt="" class="emoji">
+    </button>
+
+    <p class="js-result"></p>
+    <p class="js-choices"></p>
+    <p class="js-score"></p>
+    <button class="reset" onclick="resetScore()">
+        Reset Score
+    </button>
+    <script src="rps.js"></script>
+</body>
+</html>
