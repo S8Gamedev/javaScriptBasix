@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button class="Heads" onclick="
+        playGame('heads');
+        ">
+        Heads
+    </button>
+
+    <button class="Tails" onclick="
+        playGame('tails');
+    ">
+        Tails
+    </button>
+    <p class="output">
+
+    </p>
+    <script>
+        let Score={
+            wins:0,
+            losses:0
+        }
+        function playGame(guess){
+            Score = getScore();
+            let random=Math.random();
+            let result;
+            if(random<=0.5){
+                result='heads';
+            }
+            else{
+                result='tails';
+            }
+            // let guess = 'heads';
+            let outcome;
+            guess===result?outcome='You win':outcome='You lose';
+            if(outcome ==='You win') Score.wins++;
+            else Score.losses++;
+            updateScore(Score);
+            output=document.querySelector('.output');
+            output.innerHTML=`${outcome} <br>and Total Wins: ${Score.wins}, Total Losses: ${Score.losses}`;
+        }
+        function updateScore(Score){
+            localStorage.removeItem('Score');
+            localStorage.setItem('Score',JSON.stringify(Score));
+            return;
+        }
+        function getScore(){
+            return JSON.parse(localStorage.getItem('Score')) || {wins:0, losses:0}
+        }
+    </script>    
+</body>
+</html>
