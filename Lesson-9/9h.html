@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" onkeyup="displayInputValue();" class="inputText" placeholder="Type here"> 
+    <p class="output"></p>
+    <script>
+        function getInputValue(){
+            let inputText = document.querySelector('.inputText').value;
+            return inputText;
+        }
+        function displayInputValue(){
+            let inputText =getInputValue();
+            let output = document.querySelector('.output');
+            output.innerHTML = `${inputText}`;
+        }
+    </script>   
+</body>
+</html>

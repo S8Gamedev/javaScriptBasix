@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>9d to 9f</title>
+</head>
+<body>
+    <input type="text" class="inputText" placeholder="Enter your name" 
+    onkeydown="if(event.key === 'Enter') displayInputValue();"
+    >
+    <button onclick="displayInputValue();"
+    >Submit</button>
+    <p class="js-output"></p>
+
+    <script>
+        function getInputValue(){
+            let inputText = document.querySelector('.inputText').value;
+            return inputText;
+        }
+        function displayInputValue(){
+            let inputText =getInputValue();
+            let output = document.querySelector('.js-output');
+            output.innerHTML = `Your name is: ${inputText}`;
+        }
+    </script>
+</body>
+</html>
