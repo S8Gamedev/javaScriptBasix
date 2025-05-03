@@ -1,0 +1,16 @@
+Hoisting in JavaScript:--
+
+variable and function declarations are executed first and then other instructions are executed 
+
+variable Hoisting:-
+
+variables declared using var are hoisted and when accessed give undifined as they are not initialized 
+
+but for varialbles declared using let and const give reference error 
+
+
+Function Hoisting:--
+
+Functions can be called before the function definition 
+
+function expressions cannot be called as a function but the variable can be called as the variable is hosted not the initialization.
